@@ -54,6 +54,7 @@ class CodeController extends Controller
         ], $validationMessages);
 
         $count = $request->input('count');
+        $user_id = auth()->user()->id;
 
         // Rozpoczęcie transakcji do bazy danych aby w razie błędu nie zapisywały się kody już wygenerowane
         try {
@@ -61,7 +62,7 @@ class CodeController extends Controller
 
             for ($i = 0; $i < $count; $i++) {
                 $uniqueCode = $this->generateUniqueCode();
-                Code::create(['code' => $uniqueCode]);
+                Code::create(['code' => $uniqueCode, 'user_id' => $user_id]);
             }
 
             DB::commit();

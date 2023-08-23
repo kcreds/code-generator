@@ -62,9 +62,9 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ route('code.index') }}">Home</a>
-                                    <a class="dropdown-item" href="{{ route('code.create') }}">Dodaj</a>
+                                    <a class="dropdown-item" href="{{ route('code.create') }}">Generuj</a>
                                     <a class="dropdown-item" href="{{ route('codes.delete.view') }}">Usuń</a>
-
+                                    <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -73,6 +73,18 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <hr>
+                                    <a class="dropdown-item" href="{{ route('user.delete') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('delete-user').submit();">
+                                        {{ __('Usuń Konto') }}
+                                    </a>
+                                    <form id="delete-user" action="{{ route('user.delete') }}" method="POST"
+                                        class="d-none">
+                                        @method('DELETE')
+                                        @csrf
+                                    </form>
+
                                 </div>
                             </li>
                         @endguest

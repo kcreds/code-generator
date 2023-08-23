@@ -25,6 +25,7 @@
                                             <th>ID</th>
                                             <th>Kod</th>
                                             <th>Data utworzenia</th>
+                                            <th>Wygenerowany przez</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,6 +34,7 @@
                                                 <td>{{ $code->id }}</td>
                                                 <td>{{ $code->code }}</td>
                                                 <td>{{ $code->created_at }}</td>
+                                                <td>{{ $code->user->email }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

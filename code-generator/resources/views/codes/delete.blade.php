@@ -18,6 +18,7 @@
 
                         <form action="{{ route('codes.delete') }}" method="post">
                             @csrf
+                            @method('DELETE')
                             <div class="form-group">
                                 <label for="codes">Podaj kody (oddzielone przecinkami lub enterami):</label>
                                 <textarea name="codes" id="codes" class="form-control" rows="4" required>{{ old('codes') }}</textarea>

@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h2>Dodaj nowy kod</h2>
+                        <h2>Generuj nowe kody</h2>
 
                         @if (session('success'))
                             <div class="alert alert-success">{{ session('success') }}</div>
