@@ -22,6 +22,11 @@
                                 <label for="codes">Podaj kody (oddzielone przecinkami lub enterami):</label>
                                 <textarea name="codes" id="codes" class="form-control" rows="4" required>{{ old('codes') }}</textarea>
                             </div>
+                            @if ($errors->has('count'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('count') }}
+                                </div>
+                            @endif
                             <button type="submit" class="btn btn-danger mt-3">Usuń kody</button>
                         </form>
                     </div>

@@ -18,10 +18,15 @@
                         <form class="mt-4" method="POST" action="{{ route('code.store') }}">
                             @csrf
                             <div class="input-group mb-3">
-                                <label class="input-group-text" for="num_codes">Liczba kodów do wygenerowania:</label>
-                                <input class="form-control" type="number" name="num_codes" min="1" max="10"
+                                <label class="input-group-text" for="count">Liczba kodów do wygenerowania:</label>
+                                <input class="form-control" type="number" name="count" min="1" max="10"
                                     required>
                             </div>
+                            @if ($errors->has('count'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('count') }}
+                                </div>
+                            @endif
                             <button class="btn btn-primary" type="submit">Generuj kody</button>
                         </form>
                     </div>
