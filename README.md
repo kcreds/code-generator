@@ -8,7 +8,7 @@
 <li>W konsoli wpisz:</li>
   <ul>
     <li>php artisan migrate - aby utworzyć potrzebne tabele</li>
-    <li>php artisan serve - aby uruchomić server laravela</li>
+    <li>php artisan serve - aby uruchomić serwer laravela</li>
     <li>npm run dev - aby uruchomić front-end</li>
   </ul>
 </ul>
